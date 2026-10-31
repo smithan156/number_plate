@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #e2e8f0;
+  background: #060b14;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100vh;
+  background: #060b14;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(29, 78, 216, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+}
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+::selection { color: #fff; background: #0284c7; }
+.font-display { font-family: "Manrope", sans-serif; }
+.font-mono-plate { font-family: "JetBrains Mono", monospace; }
+
+.glass-card {
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  background: linear-gradient(145deg, rgba(13, 22, 39, 0.88), rgba(9, 15, 28, 0.94));
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+}
+
+.thin-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+.thin-scrollbar::-webkit-scrollbar-thumb { border-radius: 10px; background: #1e293b; }
+.thin-scrollbar::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+.scanline { background: linear-gradient(transparent 50%, rgba(12, 21, 33, .07) 50%); background-size: 100% 4px; }
+@keyframes pulse-soft { 50% { opacity: .48; } }
+.soft-pulse { animation: pulse-soft 1.8s ease-in-out infinite; }
+
+@keyframes scan-anim {
+  0% { top: 2%; opacity: 0.2; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 96%; opacity: 0.2; }
+}
+.scanner-bar {
+  animation: scan-anim 2.4s ease-in-out infinite;
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.radar-sweep {
+  animation: radar-sweep 2s linear infinite;
+}
